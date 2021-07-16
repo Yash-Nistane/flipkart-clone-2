@@ -1,0 +1,33 @@
+.dcaContainer{
+    width: 250px;
+    margin:0 10px;
+}
+.dcaImgContainer{
+    width: 285px;
+    height:285px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.dcaImgContainer > img{
+    width: 275px;
+    height: 275px;
+    object-fit: cover;
+    height:250px;
+    padding-top: 10px;
+} 
+
+.dcaProductName{
+    font-size: 14px;
+    padding: 10px 0;
+}
+.dcaProductPrice{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.dproductContainer :hover{
+    transform: scale(1.01);
+    transition:transform  0.3s;
+}
