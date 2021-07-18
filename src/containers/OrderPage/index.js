@@ -51,14 +51,19 @@ const OrderPage = (props) => {
               <Link
                 to={`/order_details/${order._id}`}
                 className="orderItemContainer"
-                style={{ textDecoration: "none", color:"#333" }}
+                style={{ textDecoration: "none", color: "#333" }}
               >
                 <div className="orderImgContainer">
-                  <img
+                  {/* <img
                     className="orderImg"
                     src={generatePublicUrl(
                       item.productId.productPictures[0].img
                     )}
+                  /> */}
+
+                  <img
+                    className="orderImg"
+                    src={item.productId.productPictures[0].img}
                   />
                 </div>
                 <div className="orderRow">

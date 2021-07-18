@@ -30,7 +30,8 @@ const CartItem = (props) => {
     <div className="cartItemContainer">
       <div className="flexRow" style={{marginBottom:"15px"}}>
         <div className="cartProImgContainer">
-          <img src={generatePublicUrl(img)} alt={""} />
+          {/* <img src={generatePublicUrl(img)} alt={""} /> */}
+          <img src={img} alt={""} />
         </div>
         <div className="cartItemDetails">
           <div>
