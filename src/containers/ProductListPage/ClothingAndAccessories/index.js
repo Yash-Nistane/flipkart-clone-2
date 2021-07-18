@@ -48,7 +48,7 @@ const ClothingAndAccessories = (props) => {
                   display:"flex",
                   justifyContent:"center",
                   margin:"5px 0",
-                  height:"410px",
+                  height:"420px",
                   boxShadow:"rgba(0, 0, 0, 0.45) 12px 15px 15px -20px",
                 
               }}>
