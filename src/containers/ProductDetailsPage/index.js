@@ -25,6 +25,7 @@ const ProductDetailsPage = (props) => {
   const [imageNo, setImageNo] = useState(0);
   const [noOfStars, setNoOfStars] = useState(3);
   const [productReview, setProductReview] = useState("");
+  
 
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product);
@@ -32,7 +33,7 @@ const ProductDetailsPage = (props) => {
   const changeImage = (index) => {
     setImageNo(index);
   };
-
+  
   const submitReview = () => {
     const payload = {
       productId: product.productDetails._id,
@@ -40,7 +41,17 @@ const ProductDetailsPage = (props) => {
       rating: noOfStars,
     };
 
+    setProductReview("");
     dispatch(addReview(payload));
+
+    const { productId } = props.match.params;
+    console.log(props);
+    const data = {
+      params: {
+        productId,
+      },
+    };
+    dispatch(getProductDetailsById(data));
   };
 
   useEffect(() => {
@@ -52,7 +63,7 @@ const ProductDetailsPage = (props) => {
       },
     };
     dispatch(getProductDetailsById(payload));
-  }, [product.productDetails.reviews]);
+  }, []);
 
   if (Object.keys(product.productDetails).length === 0) {
     return null;
@@ -310,6 +321,7 @@ const ProductDetailsPage = (props) => {
                     type="text"
                     placeholder="Description..."
                     className="reviewInput"
+                    value={productReview}
                     onChange={(e) => setProductReview(e.target.value)}
                   />
                 </div>

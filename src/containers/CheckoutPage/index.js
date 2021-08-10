@@ -9,6 +9,7 @@ import PriceDetails from "../../components/PriceDetails";
 
 import "./style.css";
 import CartPage from "../CartPage";
+import { useHistory } from "react-router-dom";
 
 /**
  * @author
@@ -108,6 +109,7 @@ const CheckoutPage = (props) => {
 
   const cart = useSelector((state) => state.cart);
 
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const onAddressSubmit = (addr) => {
@@ -171,6 +173,7 @@ const CheckoutPage = (props) => {
     console.log(payload);
     dispatch(addOrder(payload));
     setConfirmOrder(true);
+    history.push("/account/orders");
   };
 
   useEffect(() => {
