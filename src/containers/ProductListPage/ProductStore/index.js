@@ -33,7 +33,7 @@ const ProductStore = (props) => {
     useEffect(() => {
       const { match } = props;
       dispatch(getProductBySlug(match.params.slug));
-    }, []);
+    }, [props.match.params.slug]);
 
 
 
@@ -42,7 +42,7 @@ const ProductStore = (props) => {
       {Object.keys(product.productsByPrice).map((key, index) => {
         return (
           <Card
-            headerLeft = {`${props.match.params.slug.split("-")[0]} mobiles under ₹ ${priceRange[key]}`}
+            headerLeft = {`${props.match.params.slug.split("-")[0]} Mobiles under ₹ ${priceRange[key]}`}
             headerRight = {<button className="view-btn">VIEW ALL</button>}
             style = {{
               width: 'calc(100% - 40px)',
